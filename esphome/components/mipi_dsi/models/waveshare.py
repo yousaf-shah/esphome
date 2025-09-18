@@ -124,9 +124,11 @@ DriverChip(
         
 
         # Page 0: basic interface
-        (0xFF, 0x98, 0x81, 0x00),
-        (0x36, 0x00),      # MADCTL
-        (0x3A, 0x77),      # 24-bit (RGB888) over DSI
+        (0x11,),                         # Sleep out
+        (0xFF, 0x98, 0x81, 0x00),        # Page 0
+        (0x36, 0x00),                    # MADCTL (RGB, no mirror/rotate)
+        (0x3A, 0x55),                    # Pixel format = 16-bit RGB565   <-- CHANGED
+        (0x80, 0x01),                    # 2 lanes
 
         # Page 1: power/drive settings
         (0xFF, 0x98, 0x81, 0x01),
@@ -159,7 +161,6 @@ DriverChip(
         (0x53, 0x2C),  # Brightness control: BCTRL=1
         (0x51, 0xFF),  # Brightness = max
         (0x55, 0x00),  # CABC off
-        (0x11,),
         (0x29,),       # Display ON
     ],
 )
