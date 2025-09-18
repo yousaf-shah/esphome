@@ -81,6 +81,12 @@ class MIPI_DSI : public display::Display {
 
   void dump_config() override;
 
+  // --- DCS helper methods ---
+  void send_dcs(uint8_t cmd);
+  void send_dcs(uint8_t cmd, uint8_t param);
+  void send_dcs(uint8_t cmd, const std::vector<uint8_t> &params);
+
+
  protected:
   void write_to_display_(int x_start, int y_start, int w, int h, const uint8_t *ptr, int x_offset, int y_offset,
                          int x_pad);
