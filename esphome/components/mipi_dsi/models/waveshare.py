@@ -121,7 +121,7 @@ DriverChip(
     color_order="RGB",
     initsequence=[
         # Sleep out first
-        (0x11,),
+        
 
         # Page 0: basic interface
         (0xFF, 0x98, 0x81, 0x00),
@@ -159,6 +159,7 @@ DriverChip(
         (0x53, 0x2C),  # Brightness control: BCTRL=1
         (0x51, 0xFF),  # Brightness = max
         (0x55, 0x00),  # CABC off
+        (0x11,),
         (0x29,),       # Display ON
     ],
 )
