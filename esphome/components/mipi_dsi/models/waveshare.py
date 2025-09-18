@@ -111,11 +111,11 @@ DriverChip(
     width=720,
     hsync_back_porch=0x20,   # 32
     hsync_pulse_width=0x0A,  # 10
-    hsync_front_porch=0x20,  # 32
+    hsync_front_porch=0x28,  # 32
     vsync_back_porch=0x0E,   # 14
     vsync_pulse_width=0x02,  # 2
     vsync_front_porch=0x10,  # 16
-    pclk_frequency="72MHz",
+    pclk_frequency="70MHz",
     lane_bit_rate="1Gbps",
     swap_xy=cv.UNDEFINED,
     color_order="RGB",
@@ -125,8 +125,10 @@ DriverChip(
 
         # Page 0: basic interface
         (0xFF, 0x98, 0x81, 0x00),
-        (0x36, 0x00),      # MADCTL
-        (0x3A, 0x77),      # 24-bit (RGB888) over DSI
+        (0x36, 0x02),      # MADCTL
+        (0x3A, 0x55),      # 24-bit (RGB888) over DSI
+        
+        (0x80, 0x01),  # Select number of lanes (2)
 
         # Page 1: power/drive settings
         (0xFF, 0x98, 0x81, 0x01),
