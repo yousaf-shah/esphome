@@ -107,16 +107,16 @@ DriverChip(
 # 7-inch 720×1280 ILI9881C over MIPI DSI (no BL GPIO; DCS brightness)
 DriverChip(
     "WAVESHARE-7-DSI-TOUCH-A",
-    height=1280,
-    width=720,
-    hsync_back_porch=32,
-    hsync_pulse_width=10,
-    hsync_front_porch=32,
-    vsync_back_porch=14,
-    vsync_pulse_width=2,
-    vsync_front_porch=16,
-    pclk_frequency="66MHz",
-    lane_bit_rate="500Mbps",   # 800–1000 works; 900 is a comfy middle
+    height=720,
+    width=1280,
+    hsync_back_porch=239,
+    hsync_pulse_width=50,
+    hsync_front_porch=33,
+    vsync_back_porch=20,
+    vsync_pulse_width=30,
+    vsync_front_porch=2,
+    pclk_frequency="80MHz",
+    lane_bit_rate="1Gbps",   # 800–1000 works; 900 is a comfy middle
     swap_xy=cv.UNDEFINED,
     color_order="RGB",
     initsequence=[
