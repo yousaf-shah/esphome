@@ -109,14 +109,14 @@ DriverChip(
     "WAVESHARE-7-DSI-TOUCH-A",
     height=1280,
     width=720,
-    hsync_back_porch=0x20,   # 32
+    hsync_back_porch=0x30,   # 32
     hsync_pulse_width=0x0A,  # 10
-    hsync_front_porch=0x28,  # 32
+    hsync_front_porch=0x30,  # 32
     vsync_back_porch=0x0E,   # 14
     vsync_pulse_width=0x02,  # 2
     vsync_front_porch=0x10,  # 16
-    pclk_frequency="70MHz",
-    lane_bit_rate="1Gbps",
+    pclk_frequency="66MHz",
+    lane_bit_rate="500Mbps",
     swap_xy=cv.UNDEFINED,
     color_order="RGB",
     initsequence=[
