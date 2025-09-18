@@ -124,7 +124,6 @@ DriverChip(
         
 
         # Page 0: basic interface
-        (0x11,),                         # Sleep out
         (0xFF, 0x98, 0x81, 0x00),        # Page 0
         (0x36, 0x00),                    # MADCTL (RGB, no mirror/rotate)
         (0x3A, 0x55),                    # Pixel format = 16-bit RGB565   <-- CHANGED
@@ -160,6 +159,8 @@ DriverChip(
         (0x53, 0x2C),  # Brightness control: BCTRL=1
         (0x51, 0xFF),  # Brightness = max
         (0x55, 0x00),  # CABC off
+        
+        (0x11,),        # Sleep out
         (0x29,),       # Display ON
     ],
 )
