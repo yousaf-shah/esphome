@@ -109,16 +109,21 @@ DriverChip(
     "WAVESHARE-7-DSI-TOUCH-A",
     height=1280,
     width=720,
-    hsync_back_porch=32,
-    hsync_pulse_width=10,
-    hsync_front_porch=32,
-    vsync_back_porch=14,
-    vsync_pulse_width=2,
-    vsync_front_porch=16,
-    pclk_frequency="70MHz",
-    lane_bit_rate="900Mbps",
-    swap_xy=cv.UNDEFINED,
+
+    # Timings from Waveshare macro
+    hsync_back_porch=239,
+    hsync_pulse_width=50,
+    hsync_front_porch=33,
+    vsync_back_porch=20,
+    vsync_pulse_width=30,
+    vsync_front_porch=2,
+
+    pclk_frequency="80MHz",
+    lane_bit_rate="900Mbps",   # 800–900 Mbps is a good fit for 80 MHz @ RGB565 over 2 lanes
+
     color_order="RGB",
+    # swap_xy=cv.UNDEFINED,  # leave unless you need rotation
+
     initsequence=[
         # Sleep out + required wake
         (0x11,),
