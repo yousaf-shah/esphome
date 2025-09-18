@@ -116,7 +116,7 @@ DriverChip(
     vsync_pulse_width=2,
     vsync_front_porch=16,
     pclk_frequency="66MHz",
-    lane_bit_rate="900Mbps",   # 800–1000 works; 900 is a comfy middle
+    lane_bit_rate="500Mbps",   # 800–1000 works; 900 is a comfy middle
     swap_xy=cv.UNDEFINED,
     color_order="RGB",
     initsequence=[
