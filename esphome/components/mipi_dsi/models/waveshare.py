@@ -104,7 +104,6 @@ DriverChip(
     ],
 )
 
-# 7-inch 720×1280 ILI9881C over MIPI DSI (no BL GPIO; DCS brightness)
 DriverChip(
     "WAVESHARE-7-DSI-TOUCH-A",
     height=1280,
