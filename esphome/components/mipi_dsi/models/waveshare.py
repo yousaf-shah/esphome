@@ -126,7 +126,7 @@ DriverChip(
         # Page 0: basic interface
         (0xFF, 0x98, 0x81, 0x00),        # Page 0
         (0x36, 0x00),                    # MADCTL (RGB, no mirror/rotate)
-        (0x3A, 0x55),                    # Pixel format = 16-bit RGB565   <-- CHANGED
+        (0x3A, 0x77),                    
 
         # Page 1: power/drive settings
         (0xFF, 0x98, 0x81, 0x01),
@@ -155,12 +155,15 @@ DriverChip(
         (0x0C, 0x3C), (0x0D, 0x3C),
 
         # Back to Page 0; brightness & display on
+        (0x11,),           # Sleep out
+        # ... delay handled by generator or add the usual page/gamma tables first ...
         (0xFF, 0x98, 0x81, 0x00),
-        (0x53, 0x2C),  # Brightness control: BCTRL=1
-        (0x51, 0xFF),  # Brightness = max
-        (0x55, 0x00),  # CABC off
-        
-        (0x11,),        # Sleep out
-        (0x29,),       # Display ON
+        (0x36, 0x00),      # RGB (or 0x02)
+        (0x3A, 0x55),      # 16bpp
+        (0x29,),           # Display ON
+        (0x53, 0x2C),      # backlight control enable
+        (0x51, 0xFF),      # brightness
+        (0x55, 0x00),      # CABC off
+
     ],
 )
